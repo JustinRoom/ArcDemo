@@ -12,7 +12,7 @@
       "outputFile": "ArcDemo.apk",
       "fullName": "release",
       "baseName": "release",
-      "content": ""
+      "content": "\n1、create project"
     },
     "path": "ArcDemo.apk",
     "properties": {}

@@ -159,7 +159,7 @@ public class AboutFragment extends BaseFragment {
                 .setPositiveButton("更新", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String url = BuildConfig.BASE_URL + "JustinRoom/WheelViewDemo/master/output/%s";
+                        String url = BuildConfig.BASE_URL + "JustinRoom/ArcDemo/master/output/%s";
                         Uri uri = Uri.parse(String.format(Locale.CHINA, url, fileName));
                         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                         startActivity(intent);
