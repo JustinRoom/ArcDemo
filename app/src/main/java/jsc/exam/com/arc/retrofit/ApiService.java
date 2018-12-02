@@ -5,7 +5,7 @@ import retrofit2.http.GET;
 
 public interface ApiService {
 
-    @GET("JustinRoom/CameraMaskDemo/master/output/output.json")
+    @GET("JustinRoom/ArcDemo/master/output/output.json")
     Observable<String> getVersionInfo();
 
 }
