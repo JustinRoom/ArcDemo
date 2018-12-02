@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ArcView">
+        <attr name="arcDrawable" format="reference"/>
+        <attr name="arcHeight" format="dimension" />
+        <attr name="arcDirection">
+            <enum name="leftOutside" value="0" />
+            <enum name="leftInside" value="1" />
+            <enum name="topOutside" value="2" />
+            <enum name="topInside" value="3" />
+            <enum name="rightOutside" value="4" />
+            <enum name="rightInside" value="5" />
+            <enum name="bottomOutside" value="6" />
+            <enum name="bottomInside" value="7" />
+            <enum name="leftRightOutside" value="8" />
+            <enum name="leftRightInside" value="9" />
+            <enum name="topBottomOutside" value="10" />
+            <enum name="topBottomInside" value="11" />
+        </attr>
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_height">48dp</dimen>
+
+    <dimen name="space_1">1dip</dimen>
+    <dimen name="space_2">2dip</dimen>
+    <dimen name="space_4">4dip</dimen>
+    <dimen name="space_5">5dip</dimen>
+    <dimen name="space_8">8dip</dimen>
+    <dimen name="space_10">10dip</dimen>
+    <dimen name="space_12">12dip</dimen>
+    <dimen name="space_16">16dip</dimen>
+    <dimen name="space_20">20dip</dimen>
+    <dimen name="space_24">24dip</dimen>
+    <dimen name="space_28">28dip</dimen>
+    <dimen name="space_30">30dip</dimen>
+    <dimen name="space_32">32dip</dimen>
+    <dimen name="space_36">36dip</dimen>
+    <dimen name="space_40">40dip</dimen>
+    <dimen name="space_44">44dip</dimen>
+    <dimen name="space_48">48dip</dimen>
+    <dimen name="space_50">50dip</dimen>
+    <dimen name="space_56">56dip</dimen>
+    <dimen name="space_64">64dip</dimen>
+    <dimen name="space_128">128dip</dimen>
+    <dimen name="space_192">192dip</dimen>
+    <dimen name="space_256">256dip</dimen>
+    <dimen name="space_320">320dip</dimen>
+    <dimen name="space_512">512dip</dimen>
+    <dimen name="space_1024">1024dip</dimen>
+
+</resources>

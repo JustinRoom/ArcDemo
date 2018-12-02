@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <jsc.kit.arc.ArcView
+            android:id="@+id/arc_view"
+            android:layout_width="120dp"
+            android:layout_height="240dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_16"
+            app:arcDrawable="@drawable/head"
+            app:arcDirection="topBottomOutside"
+            app:arcHeight="@dimen/space_24" />
+
+    </FrameLayout>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:columnCount="2">
+
+        <RadioButton
+            android:id="@+id/radio_left_outside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="left outside" />
+
+        <RadioButton
+            android:id="@+id/radio_left_inside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="left inside" />
+
+        <RadioButton
+            android:id="@+id/radio_top_outside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="top outside" />
+
+        <RadioButton
+            android:id="@+id/radio_top_inside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="top inside" />
+
+        <RadioButton
+            android:id="@+id/radio_right_outside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="right outside" />
+
+        <RadioButton
+            android:id="@+id/radio_right_inside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="right inside" />
+
+        <RadioButton
+            android:id="@+id/radio_bottom_outside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="bottom outside" />
+
+        <RadioButton
+            android:id="@+id/radio_bottom_inside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="bottom inside" />
+
+        <RadioButton
+            android:id="@+id/radio_left_right_outside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="left_right outside" />
+
+        <RadioButton
+            android:id="@+id/radio_left_right_inside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="left_right inside" />
+
+        <RadioButton
+            android:id="@+id/radio_top_bottom_outside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="top_bottom outside" />
+
+        <RadioButton
+            android:id="@+id/radio_top_bottom_inside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="top_bottom inside" />
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_12"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="弧高度：" />
+
+        <SeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</LinearLayout>
