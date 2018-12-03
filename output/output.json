@@ -6,13 +6,13 @@
     "apkInfo": {
       "type": "MAIN",
       "splits": [],
-      "versionCode": 1,
-      "versionName": "0.1.0",
+      "versionCode": 3,
+      "versionName": "0.2.0",
       "enabled": true,
       "outputFile": "ArcDemo.apk",
       "fullName": "release",
       "baseName": "release",
-      "content": "\n1、create project"
+      "content": "\n1、optimize ArcDrawable\n2、optimize ArcView\n3、add arcShader(attribution)"
     },
     "path": "ArcDemo.apk",
     "properties": {}
