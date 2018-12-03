@@ -1,6 +1,10 @@
 # Arc
 **LatestVersion**
 
+[ ![Download](https://api.bintray.com/packages/justinquote/maven/arc-component/images/download.svg) ](https://bintray.com/justinquote/maven/arc-component/_latestVersion)
+
+<a href='https://bintray.com/justinquote/maven/arc-component?source=watch' alt='Get automatic notifications about new "arc-component" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a>
+
 arc library and demo
 
 
