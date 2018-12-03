@@ -107,9 +107,11 @@ compile 'jsc.kit.arc:arc-component:_latestVersion'
 
 ### 4、Screenshots
 + 4.1、[ArcDrawable](/arcLibrary/src/main/java/jsc/kit/arc/ArcDrawable.java)
+
 ![ArcDrawable](/output/shots/arc_drawable_s.png)
 
 + 4.2、[ArcView](/arcLibrary/src/main/java/jsc/kit/arc/ArcView.java)
+
 ![ArcView](/output/shots/arc_view_s.png)
 
 ### 5、release log
