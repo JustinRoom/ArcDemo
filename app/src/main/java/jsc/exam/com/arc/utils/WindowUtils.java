@@ -53,8 +53,9 @@ public final class WindowUtils {
      * @param context context
      * @return selectable item background borderless
      */
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public static Drawable getSelectableItemBackgroundBorderless(Context context){
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.LOLLIPOP)
+            return null;
         TypedValue typedValue = new TypedValue();
         context.getTheme().resolveAttribute(android.R.attr.selectableItemBackgroundBorderless, typedValue, true);
         int[] attribute = new int[]{android.R.attr.selectableItemBackgroundBorderless};

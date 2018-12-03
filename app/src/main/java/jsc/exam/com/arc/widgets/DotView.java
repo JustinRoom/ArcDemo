@@ -1,6 +1,5 @@
 package jsc.exam.com.arc.widgets;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Outline;
 import android.graphics.Path;
@@ -8,7 +7,6 @@ import android.os.Build;
 import android.support.annotation.IntDef;
 import android.support.annotation.IntRange;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -26,7 +24,6 @@ import java.lang.annotation.RetentionPolicy;
  *
  * @author jiangshicheng
  */
-@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class DotView extends AppCompatTextView {
 
     public final static int CIRCULAR = 0;
@@ -59,32 +56,34 @@ public class DotView extends AppCompatTextView {
 
     private void initAttr(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         setGravity(Gravity.CENTER);
-        setClipToOutline(true);
-        setOutlineProvider(new ViewOutlineProvider() {
-            @Override
-            public void getOutline(View view, Outline outline) {
-                switch (shape){
-                    case CIRCULAR:
-                        outline.setOval(0, 0, view.getWidth(), view.getHeight());
-                        break;
-                    case SQUARE:
-                        outline.setRect(0, 0, view.getWidth(), view.getHeight());
-                        break;
-                    case ROUND_CORNER_SQUARE:
-                        outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), radius);
-                        break;
-                    case TRIANGLE:
-                        Path path = new Path();
-                        path.moveTo(view.getWidth() / 2.0f, 0);
-                        path.lineTo(0, view.getHeight());
-                        path.lineTo(view.getWidth(), view.getHeight());
-                        path.close();
-                        Log.i("DotView", "getOutline: isConvex =" + path.isConvex());
-                        outline.setConvexPath(path);
-                        break;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            setClipToOutline(true);
+            setOutlineProvider(new ViewOutlineProvider() {
+                @Override
+                public void getOutline(View view, Outline outline) {
+                    switch (shape){
+                        case CIRCULAR:
+                            outline.setOval(0, 0, view.getWidth(), view.getHeight());
+                            break;
+                        case SQUARE:
+                            outline.setRect(0, 0, view.getWidth(), view.getHeight());
+                            break;
+                        case ROUND_CORNER_SQUARE:
+                            outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), radius);
+                            break;
+                        case TRIANGLE:
+                            Path path = new Path();
+                            path.moveTo(view.getWidth() / 2.0f, 0);
+                            path.lineTo(0, view.getHeight());
+                            path.lineTo(view.getWidth(), view.getHeight());
+                            path.close();
+                            Log.i("DotView", "getOutline: isConvex =" + path.isConvex());
+                            outline.setConvexPath(path);
+                            break;
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 
     public int getUnReadCount() {
@@ -108,7 +107,9 @@ public class DotView extends AppCompatTextView {
     public void setShape(@DotShape int dotShape, float roundRadius) {
         this.shape = dotShape;
         this.radius = roundRadius;
-        invalidateOutline();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            invalidateOutline();
+        }
     }
 
     @Override
