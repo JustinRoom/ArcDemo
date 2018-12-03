@@ -30,7 +30,7 @@ publish {
     artifactId = 'arc-component'
     publishVersion = "$version_name"
     desc = 'a arc component library'
-    website = 'https://github.com/JustinRoom/ArckDemo'
+    website = 'https://github.com/JustinRoom/ArcDemo'
 }
 
 dependencies {
