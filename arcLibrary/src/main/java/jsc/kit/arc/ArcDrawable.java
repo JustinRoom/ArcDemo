@@ -137,7 +137,13 @@ public class ArcDrawable extends Drawable implements IArcSetting {
             setBitmap(src, true);
     }
 
-    public void setShader(Shader shader) {
+    public Shader getShader() {
+        return paint.getShader();
+    }
+
+    public void setShader(Shader shader, int targetWidth, int targetHeight) {
+        this.intrinsicWidth = targetWidth;
+        this.intrinsicHeight = targetHeight;
         paint.setShader(shader);
         invalidateSelf();
     }

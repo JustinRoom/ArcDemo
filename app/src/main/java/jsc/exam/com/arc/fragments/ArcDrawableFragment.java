@@ -129,7 +129,7 @@ public class ArcDrawableFragment extends BaseFragment {
     @Override
     void onLoadData(Context context) {
         int width = getResources().getDisplayMetrics().widthPixels;
-        int height = getResources().getDimensionPixelSize(R.dimen.space_256);
+        int height = getResources().getDimensionPixelSize(R.dimen.space_192);
         Bitmap bitmap = ArcUtils.decodeAssets(context, "img/2.jpg");
         bitmap = ArcUtils.crop(bitmap, width, height);
         arcDrawable = new ArcDrawable(

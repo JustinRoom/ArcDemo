@@ -9,17 +9,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.SeekBar;
 
 import jsc.exam.com.arc.R;
 import jsc.kit.arc.ArcConstant;
-import jsc.kit.arc.ArcUtils;
 import jsc.kit.arc.ArcView;
 
 public class ArcViewFragment extends BaseFragment {
 
-    ArcView arcView;
+    ArcView arcView1;
+    ArcView arcView2;
+    ArcView arcView3;
     SeekBar seekBar;
     int[] radioIds = {
             R.id.radio_left_outside,
@@ -45,40 +45,64 @@ public class ArcViewFragment extends BaseFragment {
             updateCheckUI(buttonView.getId());
             switch (buttonView.getId()) {
                 case R.id.radio_left_outside:
-                    arcView.setArcDirection(ArcConstant.LEFT_OUTSIDE);
+                    arcView1.setArcDirection(ArcConstant.LEFT_OUTSIDE);
+                    arcView2.setArcDirection(ArcConstant.LEFT_OUTSIDE);
+                    arcView3.setArcDirection(ArcConstant.LEFT_OUTSIDE);
                     break;
                 case R.id.radio_left_inside:
-                    arcView.setArcDirection(ArcConstant.LEFT_INSIDE);
+                    arcView1.setArcDirection(ArcConstant.LEFT_INSIDE);
+                    arcView2.setArcDirection(ArcConstant.LEFT_INSIDE);
+                    arcView3.setArcDirection(ArcConstant.LEFT_INSIDE);
                     break;
                 case R.id.radio_top_outside:
-                    arcView.setArcDirection(ArcConstant.TOP_OUTSIDE);
+                    arcView1.setArcDirection(ArcConstant.TOP_OUTSIDE);
+                    arcView2.setArcDirection(ArcConstant.TOP_OUTSIDE);
+                    arcView3.setArcDirection(ArcConstant.TOP_OUTSIDE);
                     break;
                 case R.id.radio_top_inside:
-                    arcView.setArcDirection(ArcConstant.TOP_INSIDE);
+                    arcView1.setArcDirection(ArcConstant.TOP_INSIDE);
+                    arcView2.setArcDirection(ArcConstant.TOP_INSIDE);
+                    arcView3.setArcDirection(ArcConstant.TOP_INSIDE);
                     break;
                 case R.id.radio_right_outside:
-                    arcView.setArcDirection(ArcConstant.RIGHT_OUTSIDE);
+                    arcView1.setArcDirection(ArcConstant.RIGHT_OUTSIDE);
+                    arcView2.setArcDirection(ArcConstant.RIGHT_OUTSIDE);
+                    arcView3.setArcDirection(ArcConstant.RIGHT_OUTSIDE);
                     break;
                 case R.id.radio_right_inside:
-                    arcView.setArcDirection(ArcConstant.RIGHT_INSIDE);
+                    arcView1.setArcDirection(ArcConstant.RIGHT_INSIDE);
+                    arcView2.setArcDirection(ArcConstant.RIGHT_INSIDE);
+                    arcView3.setArcDirection(ArcConstant.RIGHT_INSIDE);
                     break;
                 case R.id.radio_bottom_outside:
-                    arcView.setArcDirection(ArcConstant.BOTTOM_OUTSIDE);
+                    arcView1.setArcDirection(ArcConstant.BOTTOM_OUTSIDE);
+                    arcView2.setArcDirection(ArcConstant.BOTTOM_OUTSIDE);
+                    arcView3.setArcDirection(ArcConstant.BOTTOM_OUTSIDE);
                     break;
                 case R.id.radio_bottom_inside:
-                    arcView.setArcDirection(ArcConstant.BOTTOM_INSIDE);
+                    arcView1.setArcDirection(ArcConstant.BOTTOM_INSIDE);
+                    arcView2.setArcDirection(ArcConstant.BOTTOM_INSIDE);
+                    arcView3.setArcDirection(ArcConstant.BOTTOM_INSIDE);
                     break;
                 case R.id.radio_left_right_outside:
-                    arcView.setArcDirection(ArcConstant.LEFT_RIGHT_OUTSIDE);
+                    arcView1.setArcDirection(ArcConstant.LEFT_RIGHT_OUTSIDE);
+                    arcView2.setArcDirection(ArcConstant.LEFT_RIGHT_OUTSIDE);
+                    arcView3.setArcDirection(ArcConstant.LEFT_RIGHT_OUTSIDE);
                     break;
                 case R.id.radio_left_right_inside:
-                    arcView.setArcDirection(ArcConstant.LEFT_RIGHT_INSIDE);
+                    arcView1.setArcDirection(ArcConstant.LEFT_RIGHT_INSIDE);
+                    arcView2.setArcDirection(ArcConstant.LEFT_RIGHT_INSIDE);
+                    arcView3.setArcDirection(ArcConstant.LEFT_RIGHT_INSIDE);
                     break;
                 case R.id.radio_top_bottom_outside:
-                    arcView.setArcDirection(ArcConstant.TOP_BOTTOM_OUTSIDE);
+                    arcView2.setArcDirection(ArcConstant.TOP_BOTTOM_OUTSIDE);
+                    arcView3.setArcDirection(ArcConstant.TOP_BOTTOM_OUTSIDE);
+                    arcView1.setArcDirection(ArcConstant.TOP_BOTTOM_OUTSIDE);
                     break;
                 case R.id.radio_top_bottom_inside:
-                    arcView.setArcDirection(ArcConstant.TOP_BOTTOM_INSIDE);
+                    arcView1.setArcDirection(ArcConstant.TOP_BOTTOM_INSIDE);
+                    arcView2.setArcDirection(ArcConstant.TOP_BOTTOM_INSIDE);
+                    arcView3.setArcDirection(ArcConstant.TOP_BOTTOM_INSIDE);
                     break;
             }
         }
@@ -88,7 +112,9 @@ public class ArcViewFragment extends BaseFragment {
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_arc_view, container, false);
-        arcView = root.findViewById(R.id.arc_view);
+        arcView1 = root.findViewById(R.id.arc_view1);
+        arcView2 = root.findViewById(R.id.arc_view2);
+        arcView3 = root.findViewById(R.id.arc_view3);
         for (int i = 0; i < radioIds.length; i++) {
             radios[i] = root.findViewById(radioIds[i]);
             radios[i].setOnCheckedChangeListener(listener);
@@ -99,7 +125,9 @@ public class ArcViewFragment extends BaseFragment {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                arcView.setArcHeight(progress);
+                arcView1.setArcHeight(progress);
+                arcView2.setArcHeight(progress);
+                arcView3.setArcHeight(progress);
             }
 
             @Override
@@ -118,7 +146,7 @@ public class ArcViewFragment extends BaseFragment {
 
     @Override
     void onLoadData(Context context) {
-//        arcView.setSrc(ArcUtils.decodeAssets(context, "img/1.jpg"));
+
     }
 
     private void updateCheckUI(int checkedId){

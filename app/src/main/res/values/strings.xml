@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Arc</string>
     <string name="app_update_content">
-        \n1、create project
+        \n1、optimize ArcDrawable
+        \n2、optimize ArcView
+        \n3、add arcShader(attribution)
     </string>
 </resources>

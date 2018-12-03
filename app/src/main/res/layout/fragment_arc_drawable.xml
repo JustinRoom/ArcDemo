@@ -12,7 +12,7 @@
         <ImageView
             android:id="@+id/iv_target"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/space_256"
+            android:layout_height="@dimen/space_192"
             android:scaleType="center" />
 
     </FrameLayout>

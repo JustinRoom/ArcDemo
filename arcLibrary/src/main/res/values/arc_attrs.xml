@@ -18,6 +18,7 @@
             <enum name="topBottomOutside" value="10" />
             <enum name="topBottomInside" value="11" />
         </attr>
+        <attr name="arcShader" format="string"/>
     </declare-styleable>
 
 </resources>

@@ -5,22 +5,46 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:paddingTop="@dimen/space_16">
 
         <jsc.kit.arc.ArcView
-            android:id="@+id/arc_view"
-            android:layout_width="120dp"
+            android:id="@+id/arc_view1"
+            android:layout_width="100dp"
             android:layout_height="240dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/space_16"
-            app:arcDrawable="@drawable/head"
             app:arcDirection="topBottomOutside"
-            app:arcHeight="@dimen/space_24" />
+            app:arcDrawable="@drawable/head"
+            app:arcHeight="@dimen/space_24"
+            app:arcShader="drawable" />
 
-    </FrameLayout>
+        <jsc.kit.arc.ArcView
+            android:id="@+id/arc_view2"
+            android:layout_width="100dp"
+            android:layout_height="240dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/space_12"
+            app:arcDirection="topBottomOutside"
+            app:arcDrawable="@drawable/head"
+            app:arcHeight="@dimen/space_24"
+            app:arcShader="radial, #D81B60, #008577" />
+
+        <jsc.kit.arc.ArcView
+            android:id="@+id/arc_view3"
+            android:layout_width="100dp"
+            android:layout_height="240dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/space_12"
+            app:arcDirection="topBottomOutside"
+            app:arcDrawable="@drawable/head"
+            app:arcHeight="@dimen/space_24"
+            app:arcShader="assets, img/2.jpg" />
+
+    </LinearLayout>
 
     <GridLayout
         android:layout_width="wrap_content"
@@ -68,7 +92,6 @@
             android:id="@+id/radio_bottom_outside"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
             android:text="bottom outside" />
 
         <RadioButton
@@ -90,6 +113,7 @@
             android:text="left_right inside" />
 
         <RadioButton
+            android:checked="true"
             android:id="@+id/radio_top_bottom_outside"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
