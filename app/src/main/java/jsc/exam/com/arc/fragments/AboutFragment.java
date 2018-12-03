@@ -40,13 +40,14 @@ import retrofit2.Retrofit;
 /**
  * <br>Email:1006368252@qq.com
  * <br>QQ:1006368252
- * <br><a href="https://github.com/JustinRoom/WheelViewDemo" target="_blank">https://github.com/JustinRoom/WheelViewDemo</a>
+ * <br><a href="https://github.com/JustinRoom/ArcDemo" target="_blank">https://github.com/JustinRoom/ArcDemo</a>
  *
  * @author jiangshicheng
  */
 public class AboutFragment extends BaseFragment {
 
     TextView tvVersion;
+    TextView tvUpdateContent;
     TextView tvBuildTime;
 
     @Nullable
@@ -54,6 +55,7 @@ public class AboutFragment extends BaseFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_abount, container, false);
         tvVersion = root.findViewById(R.id.tv_version);
+        tvUpdateContent = root.findViewById(R.id.tv_update_content);
         tvBuildTime = root.findViewById(R.id.tv_build_time);
         root.findViewById(R.id.btn_check_update).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +80,7 @@ public class AboutFragment extends BaseFragment {
             e.printStackTrace();
         }
         tvBuildTime.setText(String.format(Locale.CHINA, "build time:%s", BuildConfig.BUILD_TIME));
+        tvUpdateContent.setText("当前版本更新内容:" + getString(R.string.app_update_content));
     }
 
     private void checkUpdate() {
@@ -159,7 +162,7 @@ public class AboutFragment extends BaseFragment {
                 .setPositiveButton("更新", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String url = BuildConfig.BASE_URL + "JustinRoom/ArcDemo/master/output/%s";
+                        String url = BuildConfig.BASE_URL + BuildConfig.DOWNLOAD_URL;
                         Uri uri = Uri.parse(String.format(Locale.CHINA, url, fileName));
                         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                         startActivity(intent);

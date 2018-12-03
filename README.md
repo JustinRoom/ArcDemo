@@ -6,7 +6,7 @@ arc library and demo
 
 Scan QRCode to download demo application below:
 
-![](/output/arc_demo_qr_code.png)
+![](/app/src/main/res/drawable/arc_demo_qr_code.png)
 
 ### 1、implementation
 + 1.1、Gradle
