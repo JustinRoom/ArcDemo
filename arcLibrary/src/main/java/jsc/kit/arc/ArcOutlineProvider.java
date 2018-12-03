@@ -1,9 +1,9 @@
 package jsc.kit.arc;
 
-import android.annotation.TargetApi;
 import android.graphics.Outline;
 import android.graphics.Path;
 import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 
@@ -14,7 +14,7 @@ import android.view.ViewOutlineProvider;
  *
  * @author jiangshicheng
  */
-@TargetApi(Build.VERSION_CODES.LOLLIPOP)
+@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class ArcOutlineProvider extends ViewOutlineProvider {
 
     private float arcHeight;

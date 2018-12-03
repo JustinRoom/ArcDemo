@@ -1,11 +1,9 @@
 package jsc.kit.arc;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.os.Build;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -18,7 +16,6 @@ import android.view.ViewGroup;
  *
  * @author jiangshicheng
  */
-@TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class ArcView extends View implements IArcSetting {
 
     private float arcHeight;

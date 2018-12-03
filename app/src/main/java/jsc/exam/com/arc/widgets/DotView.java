@@ -8,6 +8,7 @@ import android.os.Build;
 import android.support.annotation.IntDef;
 import android.support.annotation.IntRange;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -25,7 +26,7 @@ import java.lang.annotation.RetentionPolicy;
  *
  * @author jiangshicheng
  */
-@TargetApi(Build.VERSION_CODES.LOLLIPOP)
+@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class DotView extends AppCompatTextView {
 
     public final static int CIRCULAR = 0;
