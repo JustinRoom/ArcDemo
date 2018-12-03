@@ -73,7 +73,7 @@ compile 'jsc.kit.arc:arc-component:_latestVersion'
             app:arcHeight="@dimen/space_24"
             app:arcShader="drawable" />
 ```
-+ assets下的图片资源
++ Gradient参数
 ```
         <jsc.kit.arc.ArcView
             android:id="@+id/arc_view2"
@@ -86,7 +86,7 @@ compile 'jsc.kit.arc:arc-component:_latestVersion'
             app:arcHeight="@dimen/space_24"
             app:arcShader="radial, #D81B60, #008577" />
 ```
-+ Gradient参数
++ assets下的图片资源
 ```
         <jsc.kit.arc.ArcView
             android:id="@+id/arc_view3"
