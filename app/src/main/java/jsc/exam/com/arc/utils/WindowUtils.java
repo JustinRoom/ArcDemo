@@ -1,12 +1,9 @@
 package jsc.exam.com.arc.utils;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.util.TypedValue;
 
 /**
@@ -54,8 +51,6 @@ public final class WindowUtils {
      * @return selectable item background borderless
      */
     public static Drawable getSelectableItemBackgroundBorderless(Context context){
-        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.LOLLIPOP)
-            return null;
         TypedValue typedValue = new TypedValue();
         context.getTheme().resolveAttribute(android.R.attr.selectableItemBackgroundBorderless, typedValue, true);
         int[] attribute = new int[]{android.R.attr.selectableItemBackgroundBorderless};

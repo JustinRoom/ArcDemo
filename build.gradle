@@ -2,7 +2,7 @@
 
 buildscript {
     ext.user_org = 'justinquote'
-    ext.min_sdk_veriosn = 19
+    ext.min_sdk_veriosn = 21
     ext.sdk_veriosn = 28
     ext.component_version = '28.0.0'
     ext.version_code = 1

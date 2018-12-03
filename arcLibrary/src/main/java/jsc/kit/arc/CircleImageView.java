@@ -1,9 +1,6 @@
 package jsc.kit.arc;
 
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 
@@ -14,7 +11,6 @@ import android.util.AttributeSet;
  *
  * @author jiangshicheng
  */
-@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class CircleImageView extends AppCompatImageView {
     public CircleImageView(Context context) {
         this(context, null);

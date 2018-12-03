@@ -1,15 +1,12 @@
 package jsc.kit.arc;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Path;
-import android.os.Build;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 
@@ -140,12 +137,10 @@ public final class ArcUtils {
         return path;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public static void applyOutlineProvider(@NonNull View view, float arcHeight, @ArcDirection int arcDirection) {
         applyOutlineProvider(view, new ArcOutlineProvider(arcHeight, arcDirection));
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public static void applyOutlineProvider(@NonNull View view, ViewOutlineProvider provider) {
         view.setClipToOutline(true);
         view.setOutlineProvider(provider);
