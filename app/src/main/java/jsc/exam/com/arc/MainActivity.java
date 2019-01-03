@@ -7,6 +7,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -28,9 +29,6 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
-import jsc.exam.com.arc.adapter.BaseRecyclerViewAdapter;
-import jsc.exam.com.arc.adapter.BlankSpaceItemDecoration;
-import jsc.exam.com.arc.adapter.ClassItemAdapter;
 import jsc.exam.com.arc.bean.ClassItem;
 import jsc.exam.com.arc.fragments.AboutFragment;
 import jsc.exam.com.arc.fragments.ArcDrawableFragment;
@@ -39,6 +37,9 @@ import jsc.exam.com.arc.retrofit.ApiService;
 import jsc.exam.com.arc.retrofit.CustomHttpClient;
 import jsc.exam.com.arc.retrofit.CustomRetrofit;
 import jsc.exam.com.arc.utils.CompatResourceUtils;
+import jsc.kit.adapter.SimpleAdapter3;
+import jsc.kit.adapter.SimpleItemClickListener3;
+import jsc.kit.adapter.SpaceItemDecoration;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 
@@ -53,25 +54,30 @@ public class MainActivity extends BaseActivity {
         recyclerView = new RecyclerView(this);
         recyclerView.setLayoutParams(new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.addItemDecoration(new BlankSpaceItemDecoration(
+        recyclerView.addItemDecoration(new SpaceItemDecoration(
                 CompatResourceUtils.getDimensionPixelSize(this, R.dimen.space_16),
-                CompatResourceUtils.getDimensionPixelSize(this, R.dimen.space_2),
-                CompatResourceUtils.getDimensionPixelSize(this, R.dimen.space_16),
-                CompatResourceUtils.getDimensionPixelSize(this, R.dimen.space_2)
-        ));
+                CompatResourceUtils.getDimensionPixelSize(this, R.dimen.space_4)
+        ).showFirstTop(true));
         setContentView(recyclerView);
         setTitleBarTitle(getClass().getSimpleName().replace("Activity", ""));
         showTitleBarBackView(false);
 
-        ClassItemAdapter adapter = new ClassItemAdapter();
-        recyclerView.setAdapter(adapter);
-        adapter.setOnItemClickListener(new BaseRecyclerViewAdapter.OnItemClickListener<ClassItem>() {
+        SimpleAdapter3<ClassItem> adapter3 = new SimpleAdapter3<ClassItem>() {
             @Override
-            public void onItemClick(View itemView, int position, ClassItem item, int viewType) {
-                toNewActivity(item);
+            protected void onBindDataViewHolder(@NonNull BaseViewHolder holder, int position, ClassItem dataBean) {
+                holder.setText(R.id.tv_label, dataBean.getLabel());
+                holder.setVisibility(R.id.red_dot_view, dataBean.isUpdated() ? View.VISIBLE : View.INVISIBLE);
+            }
+        };
+        adapter3.setOnItemClickListener(new SimpleItemClickListener3<ClassItem>() {
+            @Override
+            public void onDataItemClick(@NonNull View dataItemView, int position, ClassItem dataBean) {
+                toNewActivity(dataBean);
             }
         });
-        adapter.setItems(getClassItems());
+        adapter3.setDataLayoutId(R.layout.main_list_item_layout);
+        adapter3.bindRecyclerView(recyclerView);
+        adapter3.setData(getClassItems());
 
         //check upgrade if the latest checking time is 2 hours ago
         sharedPreferences = getSharedPreferences("share_arc", MODE_PRIVATE);
