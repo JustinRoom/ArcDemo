@@ -6,13 +6,13 @@
     "apkInfo": {
       "type": "MAIN",
       "splits": [],
-      "versionCode": 3,
-      "versionName": "0.2.0",
+      "versionCode": 4,
+      "versionName": "0.2.1",
       "enabled": true,
       "outputFile": "ArcDemo.apk",
       "fullName": "release",
       "baseName": "release",
-      "content": "\n1、optimize ArcDrawable\n2、optimize ArcView\n3、add arcShader(attribution)"
+      "content": "\n1、change \"implementation\" to \"compileOnly\" for \'appcompat-v7\' package"
     },
     "path": "ArcDemo.apk",
     "properties": {}
